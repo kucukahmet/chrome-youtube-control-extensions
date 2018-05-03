@@ -1,0 +1,44 @@
+{
+
+    "manifest_version": 2,
+
+    "name": "Youtube Controls",
+    "description": "Youtube Controls",
+    "version": "1.1",
+
+    "author": "ahmet",
+
+    "browser_action": {
+        "default_icon": "assets/32.png",
+        "default_title": "Youtube Controls",
+        "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "notifications"
+    ],
+
+    "web_accessible_resources": [
+        "Extension_Design/*",
+        "assets/jquery.min.js",
+        "youtube.js"
+    ],    
+    
+    "content_scripts": [{
+        "js": ["assets/jquery.min.js", "youtube.js"],
+        "matches": [ "*://*.youtube.com/*" ]
+    }],
+
+    "background": {
+        "scripts": ["assets/jquery.min.js", "background.js", "youtube.js"]
+    },
+
+    "icons": {
+        "16": "assets/16.png",
+        "32": "assets/32.png",
+        "64": "assets/64.png"
+    }
+
+}
